@@ -9,7 +9,16 @@
       <v-btn icon @click.stop="toggleDrawer()">
         <v-icon>mdi-menu</v-icon>
       </v-btn>
-      <v-spacer></v-spacer>
+      <v-spacer/>
+      <v-text-field
+        flat
+        solo-inverted
+        prepend-icon="mdi-magnify"
+        label="Procurar"
+        class="hidden-sm-and-down"
+        hide-details
+      />
+      <v-spacer/>
       <v-btn icon href="https://github.com/xiaoyongkong/BdFinal2019-2">
         <v-icon>mdi-github-circle</v-icon>
       </v-btn>

@@ -10,7 +10,7 @@
   >
     <v-toolbar color="primary darken-1" dark>
       <v-toolbar-title class="ml-0 pl-3">
-        <span class="hidden-sm-and-down">IMDb Data</span>
+        <span>IMDb Data</span>
       </v-toolbar-title>
     </v-toolbar>
       <v-list
@@ -49,6 +49,7 @@
       items: [
         { title: 'Geral', icon: 'mdi-view-dashboard', to: '/' },
         { title: 'Filmes', icon: 'mdi-movie', to: '/filmes' },
+        { title: 'Grupo', icon: 'mdi-account-multiple', to: '/grupo' },
       ],
       scrollSettings: {
         maxScrollbarLength: 160

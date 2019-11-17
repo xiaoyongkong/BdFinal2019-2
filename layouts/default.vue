@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <app-toolbar/>
+    <app-toolbar />
     <app-drawer/>
     <v-content>
       <transition name="slide-left" mode="out-in">

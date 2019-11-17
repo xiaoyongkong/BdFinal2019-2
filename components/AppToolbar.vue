@@ -1,29 +1,21 @@
 <template>
   <div>
     <v-app-bar
-      color="primary"
+      color="#F5C518"
       fixed
       dark
       app
     >
       <v-btn icon @click.stop="toggleDrawer()">
-        <v-icon>mdi-menu</v-icon>
+        <v-icon color='black'>mdi-menu</v-icon>
       </v-btn>
       <v-spacer/>
-      <v-text-field
-        flat
-        solo-inverted
-        prepend-icon="mdi-magnify"
-        label="Procurar"
-        class="hidden-sm-and-down"
-        hide-details
-      />
       <v-spacer/>
       <v-btn icon href="https://github.com/xiaoyongkong/BdFinal2019-2">
-        <v-icon>mdi-github-circle</v-icon>
+        <v-icon color='black'>mdi-github-circle</v-icon>
       </v-btn>
       <v-btn icon @click="handleFullScreen()">
-        <v-icon>mdi-fullscreen</v-icon>
+        <v-icon color='black'>mdi-fullscreen</v-icon>
       </v-btn>
     </v-app-bar>
   </div>

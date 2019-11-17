@@ -1,7 +1,7 @@
 <template>
   <div class="fill-height d-flex flex-column align-center justify-center">
-    <div class="title">
-      Grupo
+    <div>
+      Desenvolvedores
     </div>
     <v-list>
       <v-list-item

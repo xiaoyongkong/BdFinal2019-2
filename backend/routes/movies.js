@@ -23,14 +23,40 @@ function query(sql) {
 }
 
 /* GET home page. */
-router.get('/',async function(req, res, next) {
-  let movies = []
-
+router.get('/',function(req, res) {
   query('SELECT * FROM `title.basics` LIMIT 10;').then(r => {
     res.status(200).send(r)
   }).catch(e => {
-    res.status(404)
+    res.status(500)
   })
 });
+
+router.get('/countMoviesBy10Years/:year',function(req, res) {
+  let from = req.params.year
+  let until = parseInt(req.params.year) + 10
+  console.log(until)
+  query("SELECT COUNT(*) FROM `title.basics` WHERE startYear > " + from + " AND startYear < " + until + ";").then(r => {
+    res.status(200).send(r)
+  }).catch(e => {
+    res.status(500)
+  })
+})
+
+router.get('/countAdultMovies',function(req, res) {
+  query("SELECT COUNT(*) FROM `title.basics` WHERE isAdult = 1;").then(r => {
+    res.status(200).send(r)
+  }).catch(e => {
+    res.status(500)
+  })
+})
+
+router.get('/countNonAdultMovies',function(req, res) {
+  query("SELECT COUNT(*) FROM `title.basics` WHERE isAdult = 0;").then(r => {
+    res.status(200).send(r)
+  }).catch(e => {
+    res.status(500)
+  })
+})
+
 
 module.exports = router;

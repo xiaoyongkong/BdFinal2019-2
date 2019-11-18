@@ -40,7 +40,6 @@ export default {
 
   created() {
     this.$axios.get('http://localhost:3030/movies').then(r => {
-      console.log(r)
       this.movies = r.data.data
       this.headers = r.data.fields.map(m => {
         return({

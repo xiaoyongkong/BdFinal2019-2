@@ -12,36 +12,28 @@
 
     .inicio_title {
       color: black;
-      margin-top: 10%;
       font-size: 3em;
     }
 </style>
 
 <template>
-  <v-layout
-    column
-    justify-center
-    align-center
-  >
-    <v-flex
-      xs12
-      sm8
-      md6
-    >
-    <v-spacer/>
-    <h1 class='inicio_title'>Visualização Gráfica</h1>
-    </v-flex>
-  </v-layout>
+  <v-container class="d-flex flex-column fill-height align-center">
+    <div class='inicio_title'>Visualização Gráfica</div>
+    <div class="d-flex flex-wrap">
+      <adult-movies-card class="mx-2"/>
+      <movies-by-year-card class="mx-2"/>
+    </div>
+  </v-container>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-import VuetifyLogo from '~/components/VuetifyLogo.vue'
+import AdultMoviesCard from '@/components/Cards/AdultMoviesCard'
+import MoviesByYearCard from '@/components/Cards/MoviesByYearCard'
 
 export default {
   components: {
-    Logo,
-    VuetifyLogo
+    AdultMoviesCard,
+    MoviesByYearCard
   }
 }
 </script>

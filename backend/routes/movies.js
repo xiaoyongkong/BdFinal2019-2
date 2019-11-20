@@ -34,7 +34,7 @@ router.get('/',function(req, res) {
 router.get('/countMoviesBy10Years/:year',function(req, res) {
   let from = req.params.year
   let until = parseInt(req.params.year) + 10
-  console.log(until)
+  console.log("Oiiiii " + until)
   query("SELECT COUNT(*) FROM `title.basics` WHERE startYear > " + from + " AND startYear < " + until + ";").then(r => {
     res.status(200).send(r)
   }).catch(e => {
@@ -43,6 +43,7 @@ router.get('/countMoviesBy10Years/:year',function(req, res) {
 })
 
 router.get('/countAdultMovies',function(req, res) {
+  console.log("COUNT ADULT MOVIES");
   query("SELECT COUNT(*) FROM `title.basics` WHERE isAdult = 1;").then(r => {
     res.status(200).send(r)
   }).catch(e => {

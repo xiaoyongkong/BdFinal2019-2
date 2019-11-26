@@ -33,7 +33,7 @@
 <script>
 export default {
   data: () => ({
-    loading: true,
+    loading: false,
     movies: [],
     headers: []
   }),

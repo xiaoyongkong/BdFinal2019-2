@@ -25,12 +25,15 @@ export default {
     }
   }),
   mounted () {
+    console.log('EEEE')
     this.$axios.get('http://localhost:3030/movies/countAdultMovies').then(r => {
+      console.log(r)
       this.chartdata.datasets[0].data[0] = r.data.data[0]['COUNT(*)']
       this.$axios.get('http://localhost:3030/movies/countNonAdultMovies').then(r => {
         this.chartdata.datasets[0].data[1] = r.data.data[0]['COUNT(*)']
         this.renderChart(this.chartdata, this.options)
       }).catch(e => {
+        console.log('CAAATCH')
         console.log(e)
       })
     }).catch(e => {

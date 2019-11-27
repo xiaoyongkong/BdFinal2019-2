@@ -17,7 +17,7 @@
 </style>
 
 <template>
-  <v-container class="d-flex flex-column fill-height align-center">
+  <v-container class="d-flex flex-column fill-height align-center justify-center">
     <div class='inicio_title'>Visualização Gráfica</div>
     <div class="d-flex flex-wrap">
       <adult-movies-card class="mx-2"/>

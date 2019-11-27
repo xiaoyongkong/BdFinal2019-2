@@ -1,20 +1,19 @@
 <template>
   <v-container class="d-flex fill-height flex-column align-center justify-center">
-    <p style='font-size: 1.5em;'> Funconários que nasceram no mesmo ano do mais velho </p>
+    <p style='font-size: 1.5em;'> Número de episódio de cada gênero </p>
     <v-progress-circular v-if="loading" indeterminate />
     <v-data-table v-else
-      :headers="headers"
-      :items="namestaff"
+      :headers="genre_headers"
+      :items="genre"
       :items-per-page="5"
       class="elevation-1"
     />
-
     <div style='margin-top: 5%;'>
-      <p style='font-size: 1.5em;'> Número de pessoas em cada Titulo </p>
+      <p style='font-size: 1.5em;'> Gênero e titulo de cada filme </p>
       <v-progress-circular v-if="loading" indeterminate />
       <v-data-table v-else
-        :headers="num_headers"
-        :items="num"
+        :headers="genre_movies_headers"
+        :items="genre_movies"
         :items-per-page="5"
         class="elevation-1"
       />
@@ -26,16 +25,16 @@
 export default {
   data: () => ({
     loading: false,
-    namestaff: [],
-    headers: [], 
-    num: [],
-    num_headers: []
+    genre: [],
+    genre_headers: [],
+    genre_movies: [],
+    genre_movies_headers: []
   }),
 
   created() {
-    this.$axios.get('http://localhost:3030/movies/query7').then(r => {
-      this.namestaff = r.data.data
-      this.headers = r.data.fields.map(m => {
+    this.$axios.get('http://localhost:3030/movies/query4').then(r => {
+      this.genre = r.data.data
+      this.genre_headers = r.data.fields.map(m => {
         return({
           text: m.name,
           sortable: false,
@@ -47,9 +46,9 @@ export default {
     }).catch(e => {
       console.log('ERROR')
     })
-    this.$axios.get('http://localhost:3030/movies/query9').then(r => {
-      this.num = r.data.data
-      this.num_headers = r.data.fields.map(m => {
+    /*this.$axios.get('http://localhost:3030/movies/query5').then(r => {
+      this.genre_movies = r.data.data
+      this.genre_movies_headers = r.data.fields.map(m => {
         return({
           text: m.name,
           sortable: false,
@@ -60,7 +59,7 @@ export default {
       this.loading = false
     }).catch(e => {
       console.log('ERROR')
-    })
+    }) */
   }
 }
 </script>

@@ -11,7 +11,7 @@
   >
     <v-toolbar color="#F5C518" dark>
       <v-toolbar-title class="ml-0 pl-3">
-        <span style='color: black;'>IMDb Data</span>
+        <span style='color: black;'><strong>CineData</strong></span>
       </v-toolbar-title>
     </v-toolbar>
       <v-list
@@ -50,7 +50,8 @@
       items: [
         { title: 'Geral', icon: 'mdi-view-dashboard', to: '/' },
         { title: 'Filmes', icon: 'mdi-movie', to: '/filme' },
-        { title: 'Staff', icon: 'mdi-account-badge-horizontal', to: '/staff' },
+        { title: 'Funcionários', icon: 'mdi-account-badge-horizontal', to: '/staff' },
+        { title: 'Gênero', icon: 'mdi-animation-play', to: '/genero' },
         { title: 'Episódios', icon: 'mdi-television-classic', to: '/episodio' },
         { title: 'Grupo', icon: 'mdi-account-multiple', to: '/grupo' },
       ],
